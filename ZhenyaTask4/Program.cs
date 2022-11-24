@@ -39,7 +39,7 @@ int MoveRight(int[,] array, int i, int j, int step)
     for (int n = j; n < currentWidth; n++) // чтобы не сбить стартовую позицию
     {
         array[i, n] = step;
-        Console.WriteLine($"{i},{n}");
+        // Console.WriteLine($"{i},{n}");
         step++;
     }
     step = MoveDown(array, i, j, step);
@@ -53,7 +53,7 @@ int MoveDown(int[,] array, int i, int j, int step)
     for (int n = i; n < currentHeight; n++) // чтобы не сбить стартовую позицию
     {
         array[n, currentWidth] = step;
-        Console.WriteLine($"{n},{currentWidth}");
+        // Console.WriteLine($"{n},{currentWidth}");
         step++;
     }
     step = MoveLeft(array, i, j, step);
@@ -67,7 +67,7 @@ int MoveLeft(int[,] array, int i, int j, int step)
     for (int n = currentWidth; n > j; n--) // чтобы не сбить стартовую позицию
     {
         array[currentHeight, n] = step;
-        Console.WriteLine($"{currentHeight},{n}");
+        // Console.WriteLine($"{currentHeight},{n}");
         step++;
     }
     step = MoveUp(array, i, j, step);
@@ -80,7 +80,7 @@ int MoveUp(int[,] array, int i, int j, int step)
     for (int n = currentHeight; n > i; n--) // чтобы не сбить стартовую позицию
     {
         array[n, j] = step;
-        Console.WriteLine($"{n},{j}");
+        // Console.WriteLine($"{n},{j}");
         step++;
     }
     return step;
@@ -100,7 +100,7 @@ void StepRoundArray(int[,] array, int i, int j, int step)
     // }
     if (step <= array.GetLength(0) * array.GetLength(1))
     {
-        Console.WriteLine();
+        // Console.WriteLine();
         step = MoveRight(array, i, j, step);
         i++;
         j++;
